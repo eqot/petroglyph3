@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Petroglyph::Application.config.secret_key_base = '9ba6e8c16e1ebafb5835105d3fa4bf8c0deae07470f827f4f9b8069ea83cbd159aba90bf6413e7645929814f5c09511972b94e82ab6e1854d26ee73d7a206d1d'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Petroglyph::Application.config.secret_key_base = secure_token
