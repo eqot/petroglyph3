@@ -24,3 +24,19 @@ div.navbar-collapse {
     padding-right: 0;
   }
 }
+
+//// body
+
+body {
+  padding-top: 60px;
+}
+
+@import "twitter/bootstrap";
+
+.alert-notice {
+  @extend .alert-success;
+}
+
+.alert-warning {
+  @extend .alert-alert;
+}
