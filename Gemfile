@@ -29,6 +29,8 @@ group :test do
   gem 'simplecov', require: false
 end
 
+# Use device for account management
+gem 'devise'
 
 # Use bootstrap
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
