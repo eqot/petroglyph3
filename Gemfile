@@ -26,7 +26,9 @@ end
 group :test do
 	gem 'selenium-webdriver'
 	gem 'capybara'
+  gem 'simplecov', require: false
 end
+
 
 # Use bootstrap
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
