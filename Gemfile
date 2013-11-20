@@ -6,10 +6,21 @@ ruby '2.0.0'
 gem 'rails', '4.0.1'
 
 group :development, :test do
-	# Use sqlite3 as the database for Active Record
-	gem 'sqlite3'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 
-	gem 'rspec-rails'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'growl'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+end
+
+group :development do
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  gem "rails_best_practices"
 end
 
 group :test do
