@@ -1,0 +1,26 @@
+
+//// header
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #ddd;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+div.navbar-collapse {
+  padding-right: 0;
+
+  .navbar-right {
+    padding-right: 0;
+  }
+}
