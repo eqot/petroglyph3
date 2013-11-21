@@ -41,4 +41,6 @@ ActiveRecord::Schema.define(version: 20131121160627) do
     t.integer  "duration"
   end
 
+  add_index "videos", ["user_id", "created_at"], name: "index_videos_on_user_id_and_created_at"
+
 end
