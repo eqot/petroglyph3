@@ -1,3 +1,71 @@
-// Place all the styles related to the Videos controller here.
+// Place all the styles related to the videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Videos list
+
+$grayLighter: #999;
+$descripion-line-height: 1.4em;
+
+.videos {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+
+  li {
+    padding: 10px 0;
+    margin: 0;
+    border-top: 1px solid #e8e8e8;
+
+    .like {
+      font-size: 18px;
+      margin: 24px 10px 0 10px;
+      text-align: center;
+    }
+
+    .thumbnail {
+      position: relative;
+      width: 120px;
+      height: 90px;
+      margin-right: 14px;
+    }
+
+    .duration {
+      position: absolute;
+      bottom: 1px;
+      right: 4px;
+
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      background-color: #666;
+
+      padding: 1px 6px;
+    }
+
+    .title {
+      margin: 2px 0 8px 0;
+    }
+
+    .description {
+      margin: 0;
+
+      line-height: $descripion-line-height;
+      height: $descripion-line-height * 3;
+      overflow: hidden;
+    }
+
+    .timestamp {
+      color: $grayLighter;
+    }
+  }
+}
+
+
+// Video player
+
+.player {
+  width: 640px;
+  height: 390px;
+}
+
