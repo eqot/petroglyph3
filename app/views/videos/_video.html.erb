@@ -1,0 +1,33 @@
+<li class="media">
+  <div class="like pull-left">
+    <%= video.likes.count %><br>
+    <!-- <span class="glyphicon glyphicon-thumbs-up"></span> -->
+    likes
+  </div>
+  <%= link_to video do %>
+    <div class="thumbnail pull-left">
+      <%= image_tag(get_thumbnail(video)) %>
+      <span class="duration">
+        <%= get_duration(video) %>
+      </span>
+    </div>
+  <% end %>
+
+  <div class="col-lg-3 pull-right">
+    <p class="timestamp">
+      Submitted <%= simple_time(video.created_at.localtime) %>
+    </p>
+    <p>
+      <%= gravatar_for(get_user(video.user_id), { size: 25 }) %>
+      <%= get_user(video.user_id).name %>
+    </p>
+  </div>
+
+  <div class="media-body">
+    <h4 class="title"><%= link_to get_title(video), video %></h4>
+
+    <% if video && video.description.length > 0 %>
+      <p class="description"><%= video.description %></p>
+    <% end %>
+  </div>
+</li>

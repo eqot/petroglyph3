@@ -32,6 +32,10 @@ end
 # Use device for account management
 gem 'devise'
 
+# Pagenate
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 # Use bootstrap
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails',
