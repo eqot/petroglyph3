@@ -1,0 +1,28 @@
+<% provide(:title, "Video") %>
+
+<h1>
+  <%= get_title(@video) %>
+  <div class="pull-right">
+    <% unless current_user?(@user) %>
+      <span id="video_like_count">
+        <%= pluralize(0, 'like') %>
+      </span>
+      <div id="video_like_form">
+        <% if true %>
+          <%= render 'like' %>
+        <% else %>
+          <%= render 'dislike' %>
+        <% end %>
+      </div>
+    <% end %>
+    <%= link_to "Edit", edit_video_path(@video), class: "btn btn-default" %>
+    <%= link_to "Delete", @video, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+  </div>
+</h1>
+
+<iframe src="<%= get_player(@video) %>" class="player"></iframe>
+<br><br>
+
+<p>
+  <%= @video.description %>
+</p>
