@@ -37,6 +37,6 @@ body {
   @extend .alert-success;
 }
 
-.alert-warning {
-  @extend .alert-alert;
+.alert-alert {
+  @extend .alert-warning;
 }
