@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :videos, dependent: :destroy
   has_many :video_likes, dependent: :destroy
+  has_many :playlists, dependent: :destroy
 
   def video_like!(video)
     video_likes.create!(video_id: video.id)
