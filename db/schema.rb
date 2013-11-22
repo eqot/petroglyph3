@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122210822) do
+ActiveRecord::Schema.define(version: 20131122212003) do
+
+  create_table "contains", force: true do |t|
+    t.integer  "video_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contains", ["playlist_id"], name: "index_contains_on_playlist_id"
+  add_index "contains", ["video_id", "playlist_id"], name: "index_contains_on_video_id_and_playlist_id", unique: true
+  add_index "contains", ["video_id"], name: "index_contains_on_video_id"
 
   create_table "playlists", force: true do |t|
     t.string   "title"
