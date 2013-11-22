@@ -27,6 +27,7 @@ group :test do
 	gem 'selenium-webdriver'
 	gem 'capybara'
   gem 'simplecov', require: false
+  gem 'factory_girl_rails'
 end
 
 # Use device for account management
