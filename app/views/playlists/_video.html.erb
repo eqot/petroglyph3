@@ -1,0 +1,7 @@
+<tr>
+  <td>
+    <%= check_box_tag "playlist[videos[" << video.id.to_s << "]]", true, @playlist.containing?(video) %>
+  </td>
+  <td><%= link_to video.title, video %></td>
+  <td><%= get_duration(video) %></td>
+</tr>

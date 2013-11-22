@@ -1,0 +1,14 @@
+<% provide(:title, 'Playlists') %>
+
+<h1>
+  All playlists
+  <%= link_to "Add playlist", new_playlist_path, class: "btn btn-primary pull-right" %>
+</h1>
+
+<%= will_paginate @playlists, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+
+<ul class="playlists">
+  <%= render @playlists %>
+</ul>
+
+<%= will_paginate @playlists, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
