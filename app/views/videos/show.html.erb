@@ -5,10 +5,10 @@
   <div class="pull-right">
     <% unless current_user?(@user) %>
       <span id="video_like_count">
-        <%= pluralize(0, 'like') %>
+        <%= pluralize(@video.likes.count, 'like') %>
       </span>
       <div id="video_like_form">
-        <% if true %>
+        <% if !current_user.video_like?(@video) %>
           <%= render 'like' %>
         <% else %>
           <%= render 'dislike' %>

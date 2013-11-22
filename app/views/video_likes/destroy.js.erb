@@ -1,0 +1,2 @@
+$('#video_like_form').html("<%= escape_javascript(render('videos/like')) %>")
+$('#video_like_count').html("<%= pluralize(@video.likes.count, 'like') %>")

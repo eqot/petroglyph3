@@ -1,0 +1,11 @@
+<!--
+<%= link_to "#", class: "btn btn-default" do %>
+  Like <span class="glyphicon glyphicon-thumbs-up"></span>
+<% end %>
+-->
+
+<%= form_for(current_user.video_likes.build(video_id: @video.id),
+             remote: true) do |f| %>
+  <div><%= f.hidden_field :video_id %></div>
+  <%= f.submit "Like", class: "btn btn-default" %>
+<% end %>

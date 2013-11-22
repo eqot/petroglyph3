@@ -1,0 +1,5 @@
+<%= form_for(current_user.video_likes.find_by(video_id: @video.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "Dislike", class: "btn btn-default" %>
+<% end %>
