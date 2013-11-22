@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :signed_in_user, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :get_playlist, only: [:show, :edit, :update, :destroy]
 
   def new
