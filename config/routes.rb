@@ -4,10 +4,6 @@ Petroglyph::Application.routes.draw do
   get 'about' => 'static_pages#about'
 
   devise_for :users
-  devise_scope :user do
-    get 'sign_up' => 'devise/registrations#new'
-    get 'sign_in' => 'devise/sessions#new'
-  end
 
   resources :videos
   resources :video_likes, only: [:create, :destroy]
