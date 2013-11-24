@@ -10,6 +10,9 @@
 # Ignore compiled assets.
 /public/assets
 
+# Ignore custom files.
+/config/database.yml.custom
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
