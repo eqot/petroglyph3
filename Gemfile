@@ -93,6 +93,7 @@ group :production do
   # Use unicorn as the app server
   gem 'unicorn'
 
+  # Use mysql as the database for Active Record
   gem 'mysql2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
