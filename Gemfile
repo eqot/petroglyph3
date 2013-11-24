@@ -93,4 +93,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :production do
+  gem 'mysql2'
 end
