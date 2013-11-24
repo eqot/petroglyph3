@@ -24,6 +24,9 @@ group :development do
 
   # Use capistrano for deployment
   gem 'capistrano'
+  gem 'capistrano-rvm', github: "capistrano/rvm"
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
 
 group :test do
