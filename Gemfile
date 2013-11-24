@@ -21,6 +21,9 @@ group :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem "rails_best_practices"
+
+  # Use capistrano for deployment
+  gem 'capistrano'
 end
 
 group :test do
