@@ -93,5 +93,8 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :production do
+  # Use unicorn as the app server
+  gem 'unicorn'
+
   gem 'mysql2'
 end
