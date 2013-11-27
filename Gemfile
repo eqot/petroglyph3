@@ -34,6 +34,9 @@ group :test do
 	gem 'capybara'
   gem 'simplecov', require: false
   gem 'factory_girl_rails'
+
+  # Use coveralls to mesure test coverage
+  gem 'coveralls', :require => false
 end
 
 # Use device for account management

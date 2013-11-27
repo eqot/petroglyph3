@@ -1,6 +1,9 @@
 require 'rubygems'
 require 'spork'
 
+require 'coveralls'
+Coveralls.wear!
+
 Spork.prefork do
   unless ENV['DRB']
     require 'simplecov'
