@@ -1,7 +1,7 @@
 bundler_args: --without development --path vendor/bundle
 script: "bundle exec rake db:drop db:create db:migrate spec"
 rvm:
-  - 1.24.4
+  - 2.0.0
 gemfile:
   - Gemfile
 branches:
