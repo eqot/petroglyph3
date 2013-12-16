@@ -57,7 +57,11 @@ class PlaylistsController < ApplicationController
 
     def update_videos
       old_videos = @playlist.contained_videos
-      new_videos = params[:playlist][:videos].keys
+      if params[:playlist][:videos]
+        new_videos = params[:playlist][:videos].keys
+      else
+        new_videos = []
+      end
       removed_videos = []
       added_videos = []
 
