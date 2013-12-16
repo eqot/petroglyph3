@@ -34,3 +34,33 @@ $descripion-line-height: 1.4em;
     }
   }
 }
+
+.videos-list {
+  padding: 0.5em 1em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.draggable:hover {
+  background-color: #aee;
+}
+
+#dragging {
+  position: absolute;
+
+  margin-left: 1em;
+  padding-left: 0em;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.focus {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  border-radius: 4px 4px 0 0;
+}
