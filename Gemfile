@@ -46,6 +46,9 @@ gem 'devise'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
+# Use jQuery UI
+gem 'jquery-ui-rails'
+
 # Use bootstrap
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails',
