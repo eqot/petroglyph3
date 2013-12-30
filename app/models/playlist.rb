@@ -1,9 +1,7 @@
 class Playlist < ActiveRecord::Base
   belongs_to :user
-  has_many :contains
+  has_many :contains, order: :order
   has_many :contained_videos, through: :contains, source: :video
-
-  default_scope -> { order('created_at DESC') }
 
   validates :title, presence: true
   validates :user_id, presence: true
@@ -16,12 +14,12 @@ class Playlist < ActiveRecord::Base
     contains.find_by(video_id: other_video_id)
   end
 
-  def add!(other_video)
-    contains.create!(video_id: other_video.id)
+  def add!(other_video, orderIndex)
+    contains.create!(video_id: other_video.id, order: orderIndex)
   end
 
-  def add_id!(other_video_id)
-    contains.create!(video_id: other_video_id)
+  def add_id!(other_video_id, orderIndex)
+    contains.create!(video_id: other_video_id, order: orderIndex)
   end
 
   def remove!(other_video)

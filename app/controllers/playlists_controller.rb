@@ -22,11 +22,38 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @videos = @playlist.contained_videos.paginate(page: params[:page])
+    # @videos = @playlist.contained_videos.paginate(page: params[:page])
+
+    @contained_videos = []
+    @contains = @playlist.contains
+    @contains.each do |c|
+      @contained_videos << Video.find(c.video_id)
+    end
+
+    # @videos = @contained_videos.paginate(page: params[:page])
+    @videos = @contained_videos
   end
 
   def edit
+    # @contained_videos = @playlist.contained_videos
+    @contained_videos = []
+    @contains = @playlist.contains
+    @contains.each do |c|
+      @contained_videos << Video.find(c.video_id)
+    end
+
+    @contained_video_ids = []
+    @contained_videos.each do |v|
+      @contained_video_ids << v.id
+    end
+
+    @not_contained_videos = []
     @videos = Video.all
+    @videos.each do |v|
+      if !@contained_video_ids.include?(v.id)
+        @not_contained_videos << v
+      end
+    end
   end
 
   def update
@@ -57,37 +84,41 @@ class PlaylistsController < ApplicationController
 
     def update_videos
       old_videos = @playlist.contained_videos
-      if params[:playlist][:videos]
-        new_videos = params[:playlist][:videos].keys
+      if params[:playlist][:videos2] && params[:playlist][:videos2] != 'null'
+        # new_videos = params[:playlist][:videos].keys
+        new_videos = params[:playlist][:videos2].split(',')
       else
         new_videos = []
       end
-      removed_videos = []
-      added_videos = []
+      # removed_videos = []
+      # added_videos = []
+      removed_videos = old_videos
+      added_videos = new_videos
 
-      old_videos.each do |v|
-        index = new_videos.index(v)
-        if index
-          new_videos.delete_at(index)
-        else
-          removed_videos << v
-        end
-      end
+      # old_videos.each do |v|
+      #   index = new_videos.index(v)
+      #   if index
+      #     new_videos.delete_at(index)
+      #   else
+      #     removed_videos << v
+      #   end
+      # end
 
-      new_videos.each do |v|
-        index = old_videos.index(v)
-        if index
-        else
-          added_videos << v
-        end
-      end
+      # new_videos.each do |v|
+      #   index = old_videos.index(v)
+      #   if index
+      #   else
+      #     added_videos << v
+      #   end
+      # end
 
       removed_videos.each do |v|
-        @playlist.remove_id!(v)
+        # @playlist.remove_id!(v)
+        @playlist.remove!(v)
       end
 
-      added_videos.each do |v|
-        @playlist.add_id!(v)
+      added_videos.each_with_index do |v, index|
+        @playlist.add_id!(v, index)
       end
     end
 

@@ -56,7 +56,9 @@ def make_contains
   playlists = Playlist.all
   playlist = playlists.first
   videos = Video.all[2..49]
-  videos.each { |v| playlist.add!(v) }
+  videos.each_with_index do |v, index|
+    playlist.add!(v, index)
+  end
 end
 
 def make_video_likes

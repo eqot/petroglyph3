@@ -12,10 +12,6 @@
   <%= @playlist.description %>
 </p>
 
-<%= will_paginate @videos, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
-
 <ul class="videos">
   <%= render @videos %>
 </ul>
-
-<%= will_paginate @videos, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
