@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230144246) do
+ActiveRecord::Schema.define(version: 20131231113044) do
 
   create_table "contains", force: true do |t|
     t.integer  "video_id"
     t.integer  "playlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order"
+    t.integer  "position"
   end
 
   add_index "contains", ["playlist_id"], name: "index_contains_on_playlist_id"

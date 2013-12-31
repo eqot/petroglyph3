@@ -42,6 +42,9 @@ end
 # Use device for account management
 gem 'devise'
 
+# Use ActsAsList
+gem 'acts_as_list'
+
 # Use pagenate
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
