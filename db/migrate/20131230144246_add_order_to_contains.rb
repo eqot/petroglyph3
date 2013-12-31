@@ -1,5 +1,5 @@
 class AddOrderToContains < ActiveRecord::Migration
   def change
-    add_column :contains, :order, :integer, default 0
+    add_column :contains, :order, :integer
   end
 end
