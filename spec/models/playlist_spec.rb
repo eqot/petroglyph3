@@ -20,7 +20,7 @@ describe Playlist do
     let(:other_video) { FactoryGirl.create(:video) }
     before do
       @playlist.save
-      @playlist.add!(other_video)
+      @playlist.add!(other_video, 0)
     end
 
     it { should be_containing(other_video) }
