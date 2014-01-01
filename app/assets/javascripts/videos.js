@@ -42,6 +42,15 @@ $(function() {
 
   var converter = new Showdown.converter();
 
+  function convertFromMarkdownToHTML (markdown) {
+    var result = null;
+    if (markdown.length > 0) {
+      result = converter.makeHtml(markdown);
+    }
+
+    return result;
+  }
+
   var preview = $('#preview');
 
   var inputDescription = $('#inputDescription');
@@ -51,12 +60,10 @@ $(function() {
   }
 
   function onDescriptionUpdate () {
-    var markdown = inputDescription.val();
-    if (markdown.length === 0) {
-      return;
-    }
-
-    var html = converter.makeHtml(markdown);
-    preview.html(html);
+    preview.html(convertFromMarkdownToHTML(inputDescription.val()));
   }
+
+  $('.markdown').each(function (index, element) {
+    $(element).html(convertFromMarkdownToHTML($(element).text()));
+  });
 });
