@@ -5,9 +5,9 @@ set :stage, :staging
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-role :app, %w{rails-3}
-role :web, %w{rails-3}
-role :db,  %w{rails-3}
+role :app, %w{rails-4}
+role :web, %w{rails-4}
+role :db,  %w{rails-4}
 
 set :rails_env, 'production'
 
