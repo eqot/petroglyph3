@@ -40,15 +40,22 @@ $(function() {
     }
   };
 
-  var inputDescription = $('#inputDescription');
-  inputDescription.keyup(onDescriptionUpdate);
+  var converter = new Showdown.converter();
 
   var preview = $('#preview');
 
-  var converter = new Showdown.converter();
+  var inputDescription = $('#inputDescription');
+  if (inputDescription[0]) {
+    inputDescription.keyup(onDescriptionUpdate);
+    onDescriptionUpdate();
+  }
 
   function onDescriptionUpdate () {
     var markdown = inputDescription.val();
+    if (markdown.length === 0) {
+      return;
+    }
+
     var html = converter.makeHtml(markdown);
     preview.html(html);
   }
