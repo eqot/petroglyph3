@@ -1,10 +1,10 @@
-<%= form_for video, :html => {:class => "form-horizontal", onkeypress: "onKeyPress(event)"} do |f| %>
+<%= form_for video, :html => {:class => "form-horizontal"} do |f| %>
 
   <div class="form-group">
     <%= f.label :url, class: "col-lg-3 control-label", for: "inputUrl" %>
 
     <div class="col-lg-6">
-      <%= f.text_field :url, class: "form-control", id: "inputUrl", onchange: "onChangeUrl()" %>
+      <%= f.text_field :url, class: "form-control cancel-enter-key", id: "inputUrl", autofocus: true%>
     </div>
 
     <% if video.errors.any? %>
@@ -20,7 +20,7 @@
     <%= f.label :title, class: "col-lg-3 control-label", for: "inputTitle" %>
 
     <div class="col-lg-6">
-      <%= f.text_field :title, class: "form-control", id: "inputTitle" %>
+      <%= f.text_field :title, class: "form-control cancel-enter-key", id: "inputTitle" %>
     </div>
 
     <% if video.errors.any? %>
@@ -61,6 +61,12 @@
       <%= f.submit yield(:submit_button) || "Add video", class: "btn btn-primary" %>
       <%= link_to "cancel", videos_path, class: "btn btn-default" %>
     </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Preview", class: "col-lg-3 control-label", for: "preview" %>
+
+    <div class="col-lg-6" id="preview"></div>
   </div>
 
 <% end %>

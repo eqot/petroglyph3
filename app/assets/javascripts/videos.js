@@ -1,4 +1,14 @@
-(function() {
+$(function() {
+
+  $('.cancel-enter-key').keydown(function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+    }
+  });
+
+  $('#inputUrl').change(function () {
+    onChangeUrl();
+  });
 
   function getVideoId (url) {
     var videoId = null;
@@ -8,7 +18,7 @@
     return videoId;
   }
 
-  window.onChangeUrl = function () {
+  function onChangeUrl () {
     var url = $('#inputUrl').val();
     var videoId = getVideoId(url);
     // console.log(videoId);
@@ -21,20 +31,25 @@
   window.onGetInfo = function (res) {
     var data = res.data;
     // console.log(data);
-    // console.log(data.title);
-    // console.log(data.description);
 
     if (data) {
       $('#inputTitle').val(data.title);
       $('#inputDescription').val(data.description);
       $('#inputDuration').val(data.duration);
+      onDescriptionUpdate();
     }
   };
 
-  window.onKeyPress = function (event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      onChangeUrl();
-    }
-  };
-})();
+  var inputDescription = $('#inputDescription');
+  inputDescription.keyup(onDescriptionUpdate);
+
+  var preview = $('#preview');
+
+  var converter = new Showdown.converter();
+
+  function onDescriptionUpdate () {
+    var markdown = inputDescription.val();
+    var html = converter.makeHtml(markdown);
+    preview.html(html);
+  }
+});

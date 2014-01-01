@@ -16,4 +16,5 @@
 //= require jquery.ui.all
 //= require twitter/bootstrap
 //= require turbolinks
+//= require showdown
 //= require_tree .
