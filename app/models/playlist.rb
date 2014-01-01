@@ -3,6 +3,8 @@ class Playlist < ActiveRecord::Base
   has_many :contains, -> { order('position ASC') }
   has_many :contained_videos, through: :contains, source: :video
 
+  default_scope -> { order('created_at DESC') }
+
   validates :title, presence: true
   validates :user_id, presence: true
 
