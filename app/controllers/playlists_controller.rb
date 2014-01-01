@@ -4,7 +4,7 @@ class PlaylistsController < ApplicationController
 
   def new
     @playlist = Playlist.new
-    @videos = Video.all
+    @not_contained_videos = Video.all
   end
 
   def create
