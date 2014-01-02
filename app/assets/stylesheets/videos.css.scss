@@ -94,8 +94,16 @@ $descripion-line-height: 1.4em;
 
 // Video player
 
-.player {
-  width: 640px;
-  height: 390px;
-}
+.video-player {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
 
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

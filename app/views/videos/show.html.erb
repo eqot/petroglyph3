@@ -1,8 +1,13 @@
 <% provide(:title, "Video") %>
 
-<h1>
-  <%= get_title(@video) %>
-  <div class="pull-right">
+<div class="row">
+  <div class="col-lg-10 col-xs-6">
+    <h1>
+      <%= get_title(@video) %>
+    </h1>
+  </div>
+
+  <div class="col-lg-2 col-xs-6">
     <% unless current_user?(@user) %>
       <span id="video_like_count">
         <%= pluralize(@video.likes.count, 'like') %>
@@ -21,11 +26,22 @@
       <%= link_to "Delete", @video, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
     <% end %>
   </div>
-</h1>
+</div>
 
-<iframe src="<%= get_player(@video) %>" class="player"></iframe>
-<br><br>
+<br>
 
-<div class="markdown">
+<div class="row">
+  <div class="col-lg-9 col-xs-12">
+    <div class="video-player">
+      <iframe src="<%= get_player(@video) %>" class="player"></iframe>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="markdown col-lg-12 col-xs-12">
 <%= @video.description %>
+  </div>
 </div>
