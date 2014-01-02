@@ -26,7 +26,7 @@ module VideosHelper
       sec = duration % 60;
       min = (duration / 60).floor % 60;
       hour = (duration / 3600).floor;
-      (hour > 0 ? hour.to_s + ':' : '') + min.to_s + ':' + (sec < 10 ? '0' + sec.to_s : sec.to_s)
+      (hour > 0 ? hour.to_s + ':' : '') + (min < 10 ? '0' : '' ) + min.to_s + ':' + (sec < 10 ? '0' : '') + sec.to_s
     else
       ""
     end
