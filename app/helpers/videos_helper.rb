@@ -42,7 +42,7 @@ module VideosHelper
   end
 
   def simple_time(time)
-    time.strftime("%b %d '%y at %H:%M")
+    time.strftime("%b/%d/%y %H:%M")
   end
 
   private

@@ -1,33 +1,45 @@
 <li class="media">
-  <div class="like pull-left">
-    <%= video.likes.count %><br>
-    <!-- <span class="glyphicon glyphicon-thumbs-up"></span> -->
-    likes
-  </div>
-  <%= link_to video do %>
-    <div class="thumbnail pull-left">
-      <%= image_tag(get_thumbnail(video)) %>
-      <span class="duration">
-        <%= get_duration(video) %>
-      </span>
+  <div class="col-lg-9 col-xs-12">
+    <div class="like pull-left hidden-xs">
+      <%= video.likes.count %><br>
+      <!-- <span class="glyphicon glyphicon-thumbs-up"></span> -->
+      likes
     </div>
-  <% end %>
 
-  <div class="col-lg-3 pull-right">
-    <p class="timestamp">
-      Submitted <%= simple_time(video.created_at.localtime) %>
-    </p>
-    <p>
+    <%= link_to video do %>
+      <div class="thumbnail pull-left">
+        <div class="visible-xs like-xs">
+          <%= video.likes.count %>
+          <!-- <span class="glyphicon glyphicon-thumbs-up"></span> -->
+          likes
+        </div>
+
+        <%= image_tag(get_thumbnail(video)) %>
+
+        <span class="duration">
+          <%= get_duration(video) %>
+        </span>
+      </div>
+    <% end %>
+
+    <div class="media-body">
+      <h4 class="title"><%= link_to get_title(video), video %></h4>
+
+      <% if video && video.description.length > 0 %>
+        <p class="description"><%= video.description %></p>
+      <% end %>
+    </div>
+    <br class="visible-xs">
+  </div>
+
+  <div class="col-lg-3 col-xs-12">
+    <div class="timestamp col-lg-12 col-xs-5">
+      <%= simple_time(video.created_at.localtime) %>
+    </div>
+
+    <div class="user col-lg-12 col-xs-7">
       <%= gravatar_for(get_user(video.user_id), { size: 25 }) %>
       <%= get_user(video.user_id).name %>
-    </p>
-  </div>
-
-  <div class="media-body">
-    <h4 class="title"><%= link_to get_title(video), video %></h4>
-
-    <% if video && video.description.length > 0 %>
-      <p class="description"><%= video.description %></p>
-    <% end %>
+    </div>
   </div>
 </li>
