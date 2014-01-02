@@ -13,10 +13,10 @@
   </div>
 
   <div class="col-lg-3 col-xs-12">
-    <p class="timestamp col-xs-5">
+    <p class="timestamp col-lg-12 col-xs-5">
       <%= simple_time(playlist.created_at.localtime) %>
     </p>
-    <p class="user col-xs-7">
+    <p class="user col-lg-12 col-xs-7">
       <%= gravatar_for(get_user(playlist.user_id), { size: 25 }) %>
       <%= get_user(playlist.user_id).name %>
     </p>
