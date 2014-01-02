@@ -1,15 +1,5 @@
 <li class="media">
-  <div class="col-lg-3 pull-right">
-    <p class="timestamp">
-      Submitted <%= simple_time(playlist.created_at.localtime) %>
-    </p>
-    <p>
-      <%= gravatar_for(get_user(playlist.user_id), { size: 25 }) %>
-      <%= get_user(playlist.user_id).name %>
-    </p>
-  </div>
-
-  <div class="media-body">
+  <div class="col-lg-9 col-xs-12 media-body">
     <h4 class="title"><%= link_to get_title(playlist), playlist %></h4>
 
     <% if playlist && playlist.description.length > 0 %>
@@ -19,5 +9,16 @@
     <div>
       <%= pluralize(playlist.contained_videos.count, 'video') %>
     </div>
+    <br class="visible-xs">
+  </div>
+
+  <div class="col-lg-3 col-xs-12">
+    <p class="timestamp col-xs-5">
+      <%= simple_time(playlist.created_at.localtime) %>
+    </p>
+    <p class="user col-xs-7">
+      <%= gravatar_for(get_user(playlist.user_id), { size: 25 }) %>
+      <%= get_user(playlist.user_id).name %>
+    </p>
   </div>
 </li>

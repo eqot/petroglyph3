@@ -5,10 +5,10 @@
   <%= link_to "Add playlist", new_playlist_path, class: "btn btn-primary pull-right" %>
 </h1>
 
-<%= will_paginate @playlists, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+<%= will_paginate @playlists, renderer: BootstrapPagination::Rails, bootstrap: 3, previous_label: '« Prev', next_label: 'Next »', inner_window: 0, outer_window: 0 %>
 
 <ul class="playlists">
   <%= render @playlists %>
 </ul>
 
-<%= will_paginate @playlists, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+<%= will_paginate @playlists, renderer: BootstrapPagination::Rails, bootstrap: 3, previous_label: '« Prev', next_label: 'Next »', inner_window: 0, outer_window: 0 %>
