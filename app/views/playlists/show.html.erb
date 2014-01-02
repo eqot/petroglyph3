@@ -3,8 +3,10 @@
 <h1>
   <%= get_title(@playlist) %>
   <div class="pull-right">
-    <%= link_to "Edit", edit_playlist_path(@playlist), class: "btn btn-default" %>
-    <%= link_to "Delete", @playlist, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+    <% if current_user.id == @playlist.user_id %>
+      <%= link_to "Edit", edit_playlist_path(@playlist), class: "btn btn-default" %>
+      <%= link_to "Delete", @playlist, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+    <% end %>
   </div>
 </h1>
 
