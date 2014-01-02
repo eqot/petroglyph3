@@ -15,8 +15,11 @@
         <% end %>
       </div>
     <% end %>
-    <%= link_to "Edit", edit_video_path(@video), class: "btn btn-default" %>
-    <%= link_to "Delete", @video, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+
+    <% if current_user.id == @video.user_id %>
+      <%= link_to "Edit", edit_video_path(@video), class: "btn btn-default" %>
+      <%= link_to "Delete", @video, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+    <% end %>
   </div>
 </h1>
 
