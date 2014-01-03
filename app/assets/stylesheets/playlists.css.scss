@@ -53,6 +53,14 @@ $descripion-line-height: 1.4em;
   }
 }
 
+.playlist-title {
+  font-size: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
 .videos-list {
   padding: 0.5em 1em;
   border-style: solid;
