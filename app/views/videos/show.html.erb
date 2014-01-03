@@ -1,13 +1,13 @@
 <% provide(:title, "Video") %>
 
 <div class="row">
-  <div class="col-lg-10 col-xs-6">
-    <h1>
+  <div class="col-lg-10 col-md-10 col-xs-12">
+    <p class="video-title">
       <%= get_title(@video) %>
-    </h1>
+    </p>
   </div>
 
-  <div class="col-lg-2 col-xs-6">
+  <div class="col-lg-2 col-md-2 col-xs-6 col-xs-offset-6">
     <% unless current_user?(@user) %>
       <span id="video_like_count">
         <%= pluralize(@video.likes.count, 'like') %>
@@ -31,7 +31,7 @@
 <br>
 
 <div class="row">
-  <div class="col-lg-9 col-xs-12">
+  <div class="col-lg-9 col-md-9 col-xs-12">
     <div class="video-player">
       <iframe src="<%= get_player(@video) %>" class="player"></iframe>
     </div>
@@ -41,7 +41,7 @@
 <br>
 
 <div class="row">
-  <div class="markdown col-lg-12 col-xs-12">
+  <div class="markdown col-lg-12 col-md-12 col-xs-12">
 <%= @video.description %>
   </div>
 </div>

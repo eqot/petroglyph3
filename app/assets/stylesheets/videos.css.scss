@@ -91,6 +91,13 @@ $descripion-line-height: 1.4em;
   }
 }
 
+.video-title {
+  font-size: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
 
 // Video player
 
