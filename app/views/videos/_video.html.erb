@@ -26,7 +26,7 @@
       <h4 class="title"><%= link_to get_title(video), video %></h4>
 
       <% if video && video.description.length > 0 %>
-        <p class="description"><%= video.description %></p>
+        <p class="description markdown"><%= video.description %></p>
       <% end %>
     </div>
     <br class="visible-xs">
