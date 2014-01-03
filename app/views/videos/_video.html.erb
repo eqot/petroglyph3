@@ -1,5 +1,5 @@
 <li class="media">
-  <div class="col-lg-9 col-xs-12">
+  <div class="col-lg-9 col-md-9 col-xs-12">
     <div class="like pull-left hidden-xs">
       <%= video.likes.count %><br>
       <!-- <span class="glyphicon glyphicon-thumbs-up"></span> -->
@@ -32,12 +32,12 @@
     <br class="visible-xs">
   </div>
 
-  <div class="col-lg-3 col-xs-12">
-    <div class="timestamp col-lg-12 col-xs-5">
+  <div class="col-lg-3 col-md-3 col-xs-12">
+    <div class="timestamp col-lg-12 col-md-12 col-xs-5">
       <%= simple_time(video.created_at.localtime) %>
     </div>
 
-    <div class="user col-lg-12 col-xs-7">
+    <div class="user col-lg-12 col-md-12 col-xs-7">
       <%= gravatar_for(get_user(video.user_id), { size: 25 }) %>
       <%= get_user(video.user_id).name %>
     </div>
