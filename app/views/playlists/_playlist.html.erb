@@ -3,7 +3,7 @@
     <h4 class="title"><%= link_to get_title(playlist), playlist %></h4>
 
     <% if playlist && playlist.description.length > 0 %>
-      <p class="description"><%= playlist.description %></p>
+      <p class="description markdown"><%= playlist.description %></p>
     <% end %>
 
     <div>
