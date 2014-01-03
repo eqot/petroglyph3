@@ -83,8 +83,12 @@ class PlaylistsController < ApplicationController
     end
 
     def update_videos
+      if params[:playlist][:videos2] == 'null'
+        return
+      end
+
       old_videos = @playlist.contained_videos
-      if params[:playlist][:videos2] && params[:playlist][:videos2] != 'null'
+      if params[:playlist][:videos2]
         # new_videos = params[:playlist][:videos].keys
         new_videos = params[:playlist][:videos2].split(',')
       else
