@@ -1,14 +1,14 @@
-<div class="col-lg-12" id="list-area">
+<div class="col-lg-12 col-md-12 col-xs-12" id="list-area">
   <%= hidden_field_tag 'playlist[videos2]', "null" %>
 
-  <div class="col-lg-6" id="unselected-area">
+  <div class="col-lg-6 col-md-6 col-xs-6" id="unselected-area">
     <h4>Unselected videos</h4>
     <ul class="videos-list" id="unselected-videos">
       <%= render partial: 'video', collection: @not_contained_videos %>
     </ul>
   </div>
 
-  <div class="col-lg-6" id="selected-area">
+  <div class="col-lg-6 col-md-6 col-xs-6" id="selected-area">
     <h4>Selected videos</h4>
     <ul class="videos-list" id="selected-videos">
       <%= render partial: 'video', collection: @contained_videos %>
