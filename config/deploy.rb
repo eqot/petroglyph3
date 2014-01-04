@@ -10,8 +10,9 @@ set :deploy_to, '/usr/share/nginx/rails/petroglyph'
 # set :log_level, :debug
 # set :pty, true
 
-set :linked_files, %w{config/database.yml public/fonts}
+set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{public/fonts}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
