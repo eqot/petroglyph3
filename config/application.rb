@@ -20,5 +20,8 @@ module Petroglyph
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.enforce_available_locales = true
+
+    # Add fonts path which includes Bootstrap's glyphicons
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 end
