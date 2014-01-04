@@ -17,6 +17,10 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore chanko units
+/app/units
+/app/assets/*/units
+
 # Ignore coverage result.
 /coverage
 

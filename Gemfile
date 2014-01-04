@@ -39,6 +39,9 @@ group :test do
   gem 'coveralls', :require => false
 end
 
+# Use Chanko
+gem "chanko"
+
 # Use device for account management
 gem 'devise'
 
