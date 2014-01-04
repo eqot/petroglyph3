@@ -52,11 +52,6 @@ gem 'will_paginate-bootstrap'
 # Use jQuery UI
 gem 'jquery-ui-rails'
 
-# Use bootstrap
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails',
-                              :branch => '3.0.0'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
