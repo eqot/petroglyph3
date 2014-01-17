@@ -1,5 +1,8 @@
 <%= form_for(current_user.video_likes.find_by(video_id: @video.id),
              html: { method: :delete },
              remote: true) do |f| %>
-  <%= f.submit "Dislike", class: "btn btn-default" %>
+  <%= button_tag(type: 'submit', class: "btn btn-info") do %>
+    <%= @video.likes.count %>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+  <% end %>
 <% end %>
