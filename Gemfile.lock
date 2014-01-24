@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/capistrano/rvm.git
-  revision: 6aa7cb9d75361c802f466b54d0e345b7237ea3bb
+  revision: dc35ec5e7a74a422250bd6ff5e8885c8b742d0e5
   specs:
     capistrano-rvm (0.1.1)
       capistrano (~> 3.0)
