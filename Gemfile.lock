@@ -123,6 +123,7 @@ GEM
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.9)
+    inflecto (0.0.2)
     jbuilder (2.0.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -135,7 +136,7 @@ GEM
     jquery-ui-rails (4.1.1)
       railties (>= 3.1.0)
     json (1.8.1)
-    kgio (2.8.1)
+    kgio (2.9.0)
     libv8 (3.16.14.3)
     listen (2.4.0)
       celluloid (>= 0.15.2)
@@ -175,13 +176,13 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.2)
       sprockets-rails (~> 2.0.0)
-    rails_best_practices (1.14.4)
-      activesupport
+    rails_best_practices (1.15.0)
       awesome_print
       code_analyzer (>= 0.4.3)
       colored
       erubis
       i18n
+      inflecto
       require_all
       ruby-progressbar
     railties (4.0.2)
@@ -258,7 +259,7 @@ GEM
       term-ansicolor
     term-ansicolor (1.2.2)
       tins (~> 0.8)
-    therubyracer (0.12.0)
+    therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.18.1)
